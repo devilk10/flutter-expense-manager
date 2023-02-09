@@ -1,4 +1,6 @@
+import 'package:expensetracker/plus_button.dart';
 import 'package:expensetracker/top_card.dart';
+import 'package:expensetracker/transactions_list.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,25 +14,26 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const TopCard(balance: "500", income: "200", expense: "300"),
-          Expanded(
-            child: Container(
-              color: Colors.blue[100],
-              child: const Center(
-                child: Text('Transactions'),
-              ),
+      body: Padding(
+        padding: const EdgeInsets.all(25),
+        child: Column(
+          children: const [
+            TopCard(balance: "500", income: "200", expense: "300"),
+            TransactionsList(
+              description: "Sold weed",
+              amount: "1000",
+              incomeOrExpense: Transaction.Income,
             ),
-          ),
-          Container(
-            height: 25,
-            child: const Center(
-              child: Text('Button'),
+            TransactionsList(
+              description: "Smoked weed",
+              amount: "700",
+              incomeOrExpense: Transaction.Expense,
             ),
-          ),
-        ],
+          ],
+        ),
       ),
+      floatingActionButton: PlusButton(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
