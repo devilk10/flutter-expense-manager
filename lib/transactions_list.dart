@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TransactionsList extends StatelessWidget {
   final String description;
-  final Transaction incomeOrExpense;
+  final String incomeOrExpense;
   final String amount;
 
   const TransactionsList(
@@ -50,10 +50,10 @@ class TransactionsList extends StatelessWidget {
                                 )),
                           ]),
                       Text(
-                        "${Transaction.Expense == incomeOrExpense ? "-" : "+"} \$$amount",
+                        "${"Expense" == incomeOrExpense ? "-" : "+"} \$$amount",
                         style: TextStyle(
                             fontSize: 16,
-                            color: Transaction.Expense == incomeOrExpense
+                            color: "Expense" == incomeOrExpense
                                 ? Colors.red
                                 : Colors.green),
                       )
@@ -62,5 +62,3 @@ class TransactionsList extends StatelessWidget {
             )));
   }
 }
-
-enum Transaction { Income, Expense }
