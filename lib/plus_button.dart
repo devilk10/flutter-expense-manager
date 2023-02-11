@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
 class PlusButton extends StatelessWidget {
+  final function;
+  const PlusButton({required this.function});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GestureDetector(
+      onTap: function,
+      child: Container(
       height: 75,
       width: 75,
       decoration:
@@ -14,6 +19,7 @@ class PlusButton extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontSize: 25),
         ),
       ),
+      )
     );
   }
 }

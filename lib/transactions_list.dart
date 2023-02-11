@@ -50,10 +50,10 @@ class TransactionsList extends StatelessWidget {
                                 )),
                           ]),
                       Text(
-                        "${"Expense" == incomeOrExpense ? "-" : "+"} \$$amount",
+                        "${"expense" == incomeOrExpense ? "-" : "+"} \$$amount",
                         style: TextStyle(
                             fontSize: 16,
-                            color: "Expense" == incomeOrExpense
+                            color: "expense" == incomeOrExpense
                                 ? Colors.red
                                 : Colors.green),
                       )
